@@ -1,0 +1,72 @@
+[
+  {
+    "id": "esa_dallas_basic",
+    "query": "Can a landlord in Dallas charge a pet fee for an emotional support animal?",
+    "jurisdiction_id": 3,
+    "expected_keywords": ["Fair Housing Act", "HUD", "pet fee", "reasonable accommodation"],
+    "expected_confidence": "grounded"
+  },
+  {
+    "id": "esa_federal_only",
+    "query": "What federal law protects ESA tenants from pet fees?",
+    "jurisdiction_id": 1,
+    "expected_keywords": ["Fair Housing Act", "42 U.S.C.", "HUD"],
+    "expected_confidence": "grounded"
+  },
+  {
+    "id": "rent_control_ca",
+    "query": "What are the rent increase limits in California?",
+    "jurisdiction_id": null,
+    "expected_keywords": ["AB 1482", "5%", "CPI", "rent control"],
+    "expected_confidence": "grounded"
+  },
+  {
+    "id": "security_deposit_tx",
+    "query": "How long does a Texas landlord have to return the security deposit?",
+    "jurisdiction_id": 2,
+    "expected_keywords": ["21 days", "Texas Property Code", "92.103"],
+    "expected_confidence": "grounded"
+  },
+  {
+    "id": "cross_jurisdiction_compare",
+    "query": "Compare ESA rules in California vs Texas",
+    "jurisdiction_id": null,
+    "expected_keywords": ["Fair Housing Act", "California", "Texas", "ESA"],
+    "expected_confidence": "grounded"
+  },
+  {
+    "id": "out_of_scope",
+    "query": "What is the best pizza restaurant in New York?",
+    "jurisdiction_id": null,
+    "expected_keywords": [],
+    "expected_confidence": "out_of_scope"
+  },
+  {
+    "id": "eviction_process_ny",
+    "query": "What is the eviction process in New York?",
+    "jurisdiction_id": null,
+    "expected_keywords": ["notice", "eviction", "New York"],
+    "expected_confidence": "grounded"
+  },
+  {
+    "id": "section_number_lookup",
+    "query": "What does Section 504 of the Rehabilitation Act require for housing?",
+    "jurisdiction_id": 1,
+    "expected_keywords": ["Section 504", "Rehabilitation Act", "disability", "accommodation"],
+    "expected_confidence": "grounded"
+  },
+  {
+    "id": "habitability_general",
+    "query": "What is the implied warranty of habitability?",
+    "jurisdiction_id": null,
+    "expected_keywords": ["habitability", "landlord", "repair", "livable"],
+    "expected_confidence": "grounded"
+  },
+  {
+    "id": "pet_policy_city",
+    "query": "What are the pet deposit rules in San Francisco?",
+    "jurisdiction_id": null,
+    "expected_keywords": ["San Francisco", "pet deposit", "ESA", "Fair Housing"],
+    "expected_confidence": "grounded"
+  }
+]

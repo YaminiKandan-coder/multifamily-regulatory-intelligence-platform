@@ -1,0 +1,32 @@
+# Compliance Agent — Cursor Rules
+
+## LLM stack
+- Primary chat LLM: `claude-sonnet-4-20250514` via anthropic SDK
+- Fallback 1: OpenAI GPT-4o
+- Fallback 2: rule-based engine (no API key required)
+
+## Architecture rules
+- `pages/` files: UI only — import from `core/` and `db/`, zero business logic
+- `core/` never imports streamlit
+- All DB access via `db/client.py` only
+- All LLM calls via `core/llm/client.py` only
+- Config via Pydantic Settings in `config.py`, not direct `os.getenv()` calls
+- Pydantic v2 models for all DB entities
+- No `eval()` — use `json.loads()`
+- Use `deduplicate_sources()` from `core/rag/utils.py`
+- Jurisdiction names are DB-driven, never hardcoded in logic
+- Jurisdiction resolution: always use `jurisdiction_id` (int), never raw string
+
+## Naming conventions
+- DB operations: `get_*`, `create_*`, `update_*`, `delete_*`
+- UI functions: `show_*`
+- Pydantic models: PascalCase
+
+## Testing
+- Every core module requires corresponding tests
+- Use mock/fake DB clients, not real Supabase
+- No real API calls in tests
+
+## Legal
+- Legal disclaimer appended to every compliance result
+- Rule-based fallback always works without any API key
