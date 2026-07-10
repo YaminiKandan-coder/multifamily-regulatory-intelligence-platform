@@ -54,7 +54,7 @@ $$;
 
 -- Vector search with jurisdiction array param (match_regulations_v3, 60s timeout)
 CREATE OR REPLACE FUNCTION match_regulations_v3(
-  query_embedding      vector(3072),
+  query_embedding      vector(1536),
   match_count          int,
   jurisdiction_ids     int[]   DEFAULT NULL,
   category_filter      text    DEFAULT NULL

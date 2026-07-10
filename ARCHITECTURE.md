@@ -3,7 +3,7 @@
 ## Stack
 - Python 3.11 + Streamlit (multi-page via `pages/`)
 - Supabase (Postgres + pgvector)
-- Primary LLM: Anthropic Claude `claude-sonnet-4-20250514`
+- Primary LLM: Anthropic Claude `claude-sonnet-5`
 - Fallback LLM: OpenAI GPT-4o
 - Second fallback: Google Gemini
 - Final fallback: rule-based engine (`core/compliance/rules.py`) — no API key required

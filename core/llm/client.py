@@ -5,7 +5,7 @@ import re
 from config import settings
 
 # Model constants
-CLAUDE_MODEL = "claude-sonnet-4-20250514"
+CLAUDE_MODEL = "claude-sonnet-5"
 GPT4O_MODEL = "gpt-4o"
 GEMINI_MODEL = "gemini-2.5-flash"
 OPENAI_EMBED_MODEL = "text-embedding-3-small"

@@ -1,6 +1,6 @@
 -- Add federal + parent-state inclusion to match_regulations
 CREATE OR REPLACE FUNCTION match_regulations(
-  query_embedding     vector(3072),
+  query_embedding     vector(1536),
   match_count         int,
   filter_jurisdiction int DEFAULT NULL
 ) RETURNS TABLE(id int, chunk_text text, similarity float, metadata jsonb)

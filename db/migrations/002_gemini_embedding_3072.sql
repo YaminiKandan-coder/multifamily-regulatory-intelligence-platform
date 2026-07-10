@@ -1,12 +1,14 @@
--- Upgrade embedding dimension from 1536 (OpenAI) to 3072 (Gemini)
--- WARNING: Existing embeddings must be re-indexed after this migration.
+-- NOTE: originally upgraded embedding dimension from 1536 (OpenAI) to 3072 (Gemini).
+-- This deployment is configured for OpenAI embeddings (EMBED_PROVIDER=openai), so this
+-- migration is a no-op that keeps the column at 1536 to match text-embedding-3-small.
+-- WARNING: Existing embeddings must be re-indexed after any future dimension change.
 
 ALTER TABLE regulation_embeddings
-  ALTER COLUMN embedding TYPE vector(3072);
+  ALTER COLUMN embedding TYPE vector(1536);
 
--- Re-create the match_regulations function for the new dimension
+-- Re-create the match_regulations function for the dimension in use
 CREATE OR REPLACE FUNCTION match_regulations(
-  query_embedding   vector(3072),
+  query_embedding   vector(1536),
   match_count       int,
   filter_jurisdiction int DEFAULT NULL
 ) RETURNS TABLE(id int, chunk_text text, similarity float, metadata jsonb)

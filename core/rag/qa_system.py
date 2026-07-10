@@ -57,7 +57,6 @@ class QASystem:
         top_k = top_k or settings.RAG_RERANK_TOP_K
 
         if not _is_in_scope(query):
-            from core.rag.grounding import GroundedAnswer
             return GroundedAnswer(
                 answer="This question appears to be outside the scope of US housing regulations.",
                 confidence="out_of_scope",

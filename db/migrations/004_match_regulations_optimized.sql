@@ -1,4 +1,4 @@
--- Add HNSW index for fast cosine similarity on 3072-dim embeddings
+-- Add HNSW index for fast cosine similarity on 1536-dim embeddings
 CREATE INDEX IF NOT EXISTS regulation_embeddings_hnsw_idx
   ON regulation_embeddings
   USING hnsw (embedding vector_cosine_ops)
@@ -6,7 +6,7 @@ CREATE INDEX IF NOT EXISTS regulation_embeddings_hnsw_idx
 
 -- Rewrite match_regulations with NULL/non-NULL branching for query planner
 CREATE OR REPLACE FUNCTION match_regulations(
-  query_embedding     vector(3072),
+  query_embedding     vector(1536),
   match_count         int,
   filter_jurisdiction int DEFAULT NULL
 ) RETURNS TABLE(id int, chunk_text text, similarity float, metadata jsonb)
